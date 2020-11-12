@@ -96,7 +96,10 @@ def search_git():
                 L2Array = []
                 for row in csv_reader:
                     releaseDate = datetime.datetime.strptime(row[0], "%d/%m/%Y")
-                    stepDict = {"release_date": row[0], "release_datetime": releaseDate, "img_url": row[1], "text": row[2], "url_link": row[3]}
+                    if releaseDate < datetime.datetime.now():
+                        stepDict = {"release_date": row[0], "release_datetime": releaseDate, "img_url": row[1], "text": row[2], "url_link": row[3], "released": True}
+                    else:
+                        stepDict = {"release_date": row[0], "release_datetime": releaseDate, "img_url": row[1], "text": row[2], "url_link": row[3], "released": False}
                     L2Array.append(stepDict)
                 L2Array = sorted(L2Array, key=lambda k: k['release_datetime'], reverse=True)
                 for res in L2Array:
@@ -110,7 +113,10 @@ def search_git():
                 L2PArray = []
                 for row in csv_reader:
                     releaseDate = datetime.datetime.strptime(row[0], "%d/%m/%Y")
-                    stepDict = {"release_date": row[0], "release_datetime": releaseDate, "img_url": row[1], "text": row[2], "url_link": row[3]}
+                    if releaseDate < datetime.datetime.now():
+                        stepDict = {"release_date": row[0], "release_datetime": releaseDate, "img_url": row[1], "text": row[2], "url_link": row[3], "released": True}
+                    else:
+                        stepDict = {"release_date": row[0], "release_datetime": releaseDate, "img_url": row[1], "text": row[2], "url_link": row[3], "released": False}
                     L2PArray.append(stepDict)
                 L2PArray = sorted(L2PArray, key=lambda k: k['release_datetime'], reverse=True)
                 for res in L2PArray:

@@ -48,6 +48,7 @@ body {
   margin-right: auto;
   float: center;
   margin-top: 5vh;
+  max-width: 80%;
 }
 
 .home-page button:hover {
@@ -137,7 +138,6 @@ body {
   font-size: 80px;
   margin: 0px;
   border: 0;
-  border-radius: 20px;
 }
 
 .year-page input::placeholder {
@@ -150,9 +150,8 @@ body {
   font-size: 80px;
   margin: 0px;
   border: 0;
-  margin-left: -40px;
+  margin-left: -6px;
   padding: 1px 7px 1px;
-  border-radius: 20px;
 }
 
 .year-page .year-select {
@@ -190,12 +189,21 @@ body {
   background-color: #0c4369;
 }
 
+.year-page .date {
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: -10px;
+  text-align: center;
+  font-size: 25px;
+}
+
 .year-page .fact-space {
   width: 800px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
   perspective: 1000px;
 }
 
@@ -211,6 +219,10 @@ body {
 
 .fact-card.clicked {
   -webkit-transform: rotateX(180deg);
+}
+
+.fact-card.unreleased {
+  border: 5px solid #a1a1a1;
 }
 
 .fact-card .card-front {
@@ -306,17 +318,23 @@ body {
     height: 30px;
     width: 30px;
     border-radius: 30px;
-    font-size: 10px;
+    font-size: 9.5px;
+  }
+
+  .year-page .date {
+    margin-top: 50px;
+    margin-bottom: -30px;
+    font-size: 20px;
   }
 }
 
 @media(max-width:475px) {
   .year-page input {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .year-page button {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .card-back p {

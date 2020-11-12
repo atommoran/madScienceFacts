@@ -2,9 +2,9 @@
 docker rm -f Factend
 echo "const AppConstants = {
 
-  api: 'http://<YOUR_API_ADDRESS_HERE>:5000',
+  api: 'http://www.madsciencefacts.co.uk:5000',
 
-  appName: 'Sir\'s Mad Science Facts',
+  appName: 'Mr Moran\'s Mad Science Facts',
 };
 
 export default AppConstants;" >src/js/config/app.constants.js

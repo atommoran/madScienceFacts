@@ -1,0 +1,48 @@
+<div class="year-page">
+  <form ng-if="!$ctrl.loggedIn">
+    <input type="text" placeholder="Enter the password" ng-enter="$ctrl.login()" ng-model="$ctrl.password" />
+    <button ng-if="!$ctrl.logFail || $ctrl.password!=$ctrl.lastAttempt" ng-click="$ctrl.login()">
+      <i class="fas fa-jedi"></i>
+    </button>
+    <button ng-if="$ctrl.logFail && $ctrl.password==$ctrl.lastAttempt" ng-click="$ctrl.login()" style="background-color: #e80c0c;">
+      <i class="fas fa-jedi"></i>
+    </button>
+  </form>
+
+  <div class="year-select" ng-click="$ctrl.year()" ng-if="$ctrl.loggedIn" ng-class="{'last':!$ctrl.currentYear}">
+    <div class="year-dot" ng-class="{'last':!$ctrl.currentYear}">
+      <p ng-if="!$ctrl.currentYear">L2</p>
+      <p ng-if="$ctrl.currentYear">L2P</p>
+    </div>
+  </div>
+
+  <div ng-if="$ctrl.loggedIn && $ctrl.currentYear" ng-repeat="fact in $ctrl.l2pfacts">
+    <p class="date">{{fact.release_date}}</p>
+    <div class="fact-space" ng-click="$ctrl.l2pselect(fact)">
+      <div class="fact-card" ng-class="{'clicked':fact.clicked, 'unreleased':!fact.released}">
+        <div class="card-front">
+          <img src="{{fact.img_url}}" alt="Fact image">
+        </div>
+        <div class="card-back">
+          <p>{{fact.text}}</p>
+          <a href="{{fact.url_link}}" target="_blank">Find out more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="$ctrl.loggedIn && !$ctrl.currentYear" ng-repeat="fact in $ctrl.l2facts" ng-class="{'unreleased':!fact.released}">
+    <p class="date">{{fact.release_date}}</p>
+    <div class="fact-space" ng-click="$ctrl.l2select(fact)">
+      <div class="fact-card" ng-class="{'clicked':fact.clicked, 'unreleased':!fact.released}">
+        <div class="card-front">
+          <img src="{{fact.img_url}}" alt="Fact image">
+        </div>
+        <div class="card-back">
+          <p>{{fact.text}}</p>
+          <a href="{{fact.url_link}}" target="_blank">Find out more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

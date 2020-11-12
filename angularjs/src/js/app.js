@@ -13,6 +13,7 @@ import './home';
 import './services';
 import './ltwo';
 import './ltwop';
+import './teacher';
 
 // Create and bootstrap application
 const requires = [
@@ -22,7 +23,8 @@ const requires = [
   'app.home',
   'app.services',
   'app.ltwo',
-  'app.ltwop'
+  'app.ltwop',
+  'app.teacher'
 ];
 
 // alert=function (){}
