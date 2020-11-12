@@ -1,0 +1,23 @@
+<div class="year-page">
+  <form ng-if="!$ctrl.loggedIn">
+    <input type="text" placeholder="Enter the password" ng-enter="$ctrl.login()" ng-model="$ctrl.password" />
+    <button ng-if="!$ctrl.logFail || $ctrl.password!=$ctrl.lastAttempt" ng-click="$ctrl.login()">
+      <i class="fas fa-dna"></i>
+    </button>
+    <button ng-if="$ctrl.logFail && $ctrl.password==$ctrl.lastAttempt" ng-click="$ctrl.login()" style="background-color: #e80c0c;">
+      <i class="fas fa-dna"></i>
+    </button>
+  </form>
+
+  <div class="fact-space" ng-if="$ctrl.loggedIn" ng-click="$ctrl.select(fact)" ng-repeat="fact in $ctrl.facts">
+    <div class="fact-card" ng-class="{'clicked':fact.clicked}">
+      <div class="card-front">
+        <img src="{{fact.img_url}}" alt="Fact image">
+      </div>
+      <div class="card-back">
+        <p>{{fact.text}}</p>
+        <a href="{{fact.url_link}}" target="_blank">Find out more</a>
+      </div>
+    </div>
+  </div>
+</div>

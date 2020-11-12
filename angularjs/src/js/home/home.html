@@ -1,0 +1,23 @@
+<div class="home-page">
+  <button ng-if="!$ctrl.showText" ng-click="$ctrl.rotateText()">Click here for an explanation</button>
+  <button ng-if="$ctrl.showText" ng-click="$ctrl.rotateText()">I get it now</button>
+  <div ng-if="$ctrl.showText">
+    <p>For a couple of years, I have tried to remember to pause in every GCSE class I teach and share a mad science fact for a minute or two;   something that has made me think ‘Isn’t science cool?’.</p>
+    <p>Sometimes, my students have quietly nodded in agreement.  I get that shouting ‘Science IS cool, Sir’ is lame.  I’ll take this.</p>
+    <p>Sometimes, they have said nothing but I can see it in their eyes.</p>
+    <p>Sometimes, they’ve said ‘We can see you’re really interested but literally nobody else in this room cares!’ [Actual quote]</p>
+    <p>This year, post lockdown and in the excitement and workload of a new school year, I have let this part of my teaching practice slip.  Shame on me.</p>
+    <p>This website was created as a programming project for my son, to make it easier for me to introduce the facts in class and so less likely to forget.  You might use it to go back and remind yourself of the ones that did interest you;  each one has a link to click to take you somewhere you can learn more.</p>
+    <p>Click on the button for your year below, enter the password I gave you in class and enter a world of science madness.   A new mad science fact should pop up at least once a week.</p>
+  </div>
+  <a ui-sref-active="active" ui-sref="app.ltwo">
+    <i class="fas fa-dna"></i>
+    <br><br>
+    L2
+  </a>
+  <a ui-sref-active="active" ui-sref="app.ltwop">
+    <i class="fas fa-flask"></i>
+    <br><br>
+    L2P
+  </a>
+</div>

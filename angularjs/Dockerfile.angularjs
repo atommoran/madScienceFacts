@@ -1,0 +1,11 @@
+FROM node:10-alpine AS compiler
+RUN npm install -g gulp
+COPY . /app
+WORKDIR /app
+RUN npm install
+RUN gulp build
+
+FROM nginx as build
+EXPOSE 80
+COPY --from=compiler /app/dist/ /usr/share/nginx/html
+COPY /src/images/background_image.png /usr/share/nginx/html/images/image.png

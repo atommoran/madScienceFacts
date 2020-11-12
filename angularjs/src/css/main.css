@@ -1,0 +1,332 @@
+body {
+  margin: 0px;
+}
+
+.header-bar {
+  width: 100%;
+  padding: 0.2rem 0rem;
+  font-family: Arial, sans-serif;
+  background-color: #1660b5;
+  color: #ffffff;
+  position: fixed;
+  z-index: 99;
+}
+
+.header-bar a {
+  margin: 0px;
+  padding: 0.3rem 0.5rem;
+  font-size: 5vw;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media(min-width:500px) {
+  .header-bar a {
+    font-size: 30px;
+  }
+}
+
+.home-page {
+  min-height: 90vh;
+  background-color: #167ec4;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: block;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+}
+
+.home-page button {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #07b39f;
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+  margin-top: 5vh;
+}
+
+.home-page button:hover {
+  background-color: #068f7f;
+}
+
+.home-page p {
+  width: 80%;
+  color: #ffffff;
+  display: block;
+  font-size: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+
+.home-page a {
+  border: 5px solid #ffffff;
+  border-radius: 20px;
+  background-color: #07b39f;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  width: 250px;
+  margin: 10vh 5vw 0vh;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 50px;
+}
+
+.home-page a:hover {
+  background-color: #068f7f;
+}
+
+@media(max-width:675px) {
+  .home-page a {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #07b39f;
+    width: 80vw;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+  }
+
+  .home-page {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .home-page button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.year-page {
+  min-height: 90vh;
+  background-color: #167ec4;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: block;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+}
+
+.year-page form {
+  width: 100vw;
+  height: 30vh;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+  display: inline-block;
+}
+
+.year-page input {
+  background-color: #ffffff;
+  color: #07b39f;
+  font-size: 80px;
+  margin: 0px;
+  border: 0;
+  border-radius: 20px;
+}
+
+.year-page input::placeholder {
+  color: #84bfb8;
+}
+
+.year-page button {
+  background-color: #07b39f;
+  color: #ffffff;
+  font-size: 80px;
+  margin: 0px;
+  border: 0;
+  margin-left: -40px;
+  padding: 1px 7px 1px;
+  border-radius: 20px;
+}
+
+.year-page .year-select {
+  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  cursor: pointer;
+  height: 60px;
+  width: 100px;
+  padding: 8px;
+  border-radius: 60px;
+}
+
+.year-select .year-dot {
+  text-align: center;
+  background-color: #167ec4;
+  color: #ffffff;
+  height: 60px;
+  width: 60px;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 60px;
+  font-size: 20px;
+  float: right;
+}
+
+.year-dot.last {
+  float: left;
+  color: #0c4369;
+}
+
+.year-select.last {
+  background-color: #0c4369;
+}
+
+.year-page .fact-space {
+  width: 800px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  perspective: 1000px;
+}
+
+.year-page .fact-card {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #07b39f;
+  border-radius: 10px;
+  position: relative;
+  -webkit-transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+}
+
+.fact-card.clicked {
+  -webkit-transform: rotateX(180deg);
+}
+
+.fact-card .card-front {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front img {
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  float: center;
+}
+
+.fact-card .card-back {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #06869c;
+  color: #ffffff;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: rotateX(180deg);
+}
+
+.card-back p {
+  width: 90%;
+  height: 70%;
+  margin-top: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  overflow: scroll;
+  font-size: 30px;
+}
+
+.card-back a {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #07b39f;
+  padding: 3px;
+  margin: 3vw;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.card-back a:hover {
+  background-color: #068f7f;
+}
+
+@media(max-width:950px) {
+  .year-page input {
+    font-size: 40px;
+  }
+
+  .year-page button {
+    font-size: 40px;
+  }
+}
+
+@media(max-width:1000px) {
+  .year-page .fact-space {
+    width: 80vw;
+    height: 60vw;
+    margin-top: 5vh;
+  }
+}
+
+@media(max-width:750px) {
+  .card-back p {
+    margin-top: 5vw;
+    font-size: 20px;
+  }
+
+  .card-back a {
+    padding: 2px;
+    margin: 2vw;
+    font-size: 20px;
+  }
+
+  .year-page .year-select {
+    height: 30px;
+    width: 50px;
+    padding: 4px;
+    border-radius: 30px;
+  }
+
+  .year-select .year-dot {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    font-size: 10px;
+  }
+}
+
+@media(max-width:475px) {
+  .year-page input {
+    font-size: 16px;
+  }
+
+  .year-page button {
+    font-size: 16px;
+  }
+
+  .card-back p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .card-back a {
+    padding: 2px;
+    margin: 2px;
+    font-size: 16px;
+  }
+}
