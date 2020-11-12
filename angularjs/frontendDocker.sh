@@ -2,7 +2,7 @@
 docker rm -f Factend
 echo "const AppConstants = {
 
-  api: 'http://192.168.5.228:5000',
+  api: 'http://<YOUR_API_ADDRESS_HERE>:5000',
 
   appName: 'Sir\'s Mad Science Facts',
 };
