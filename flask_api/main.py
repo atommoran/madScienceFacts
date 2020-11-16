@@ -20,7 +20,7 @@ def after_request(response):
 
 @app.route("/")
 def intro():
-    return "This is the backend for my Dad's flipping website. It does literally one thing. Bugger off"
+    return "This is the backend for madsciencefacts.co.uk. It is designed to bring knowledge and joy to all those that possess the password."
 
 @app.route('/login', methods=['POST'])
 @cross_origin()
