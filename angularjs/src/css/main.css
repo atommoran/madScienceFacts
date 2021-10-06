@@ -73,7 +73,7 @@ body {
   padding-top: 10vh;
   padding-bottom: 10vh;
   width: 250px;
-  margin: 10vh 5vw 0vh;
+  margin: 10vh 1vw 0vh;
   text-decoration: none;
   color: #ffffff;
   display: inline-block;
@@ -84,7 +84,13 @@ body {
   background-color: #068f7f;
 }
 
-@media(max-width:675px) {
+@media(max-width:1145px) {
+  .home-page a {
+    margin: 10vh 6vw 0vh;
+  }
+}
+
+@media(max-width:690px) {
   .home-page a {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -277,6 +283,96 @@ body {
   background-color: #068f7f;
 }
 
+.fact-card .quiz-back {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #06869c;
+  color: #ffffff;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: rotateX(180deg);
+}
+
+.quiz-back p {
+  width: 90%;
+  height: 40%;
+  margin-top: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  overflow: scroll;
+  font-size: 30px;
+}
+
+.quiz-back a {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #07b39f;
+  padding: 6px 3px;
+  margin: 1vw 3vw;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+  display: block
+}
+
+.quiz-back a:hover {
+  background-color: #068f7f;
+}
+
+.quiz-back a.chosen {
+  border-color: #1660b5;
+  color: #1660b5;
+}
+
+.quiz-back a.right {
+  background-color: #0bbd6d;
+}
+
+.quiz-back a.right:hover {
+  background-color: #0bbd6d;
+}
+
+.quiz-back a.wrong {
+  background-color: #eb4c49;
+  color: #ffffff;
+}
+
+.quiz-back a.wrong:hover {
+  background-color: #eb4c49;
+}
+
+.year-page .results-section {
+  margin-top: 6vw;
+}
+
+.results-section button {
+  background-color: #07b39f;
+  color: #ffffff;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+  font-size: 80px;
+  margin: 0px;
+  padding: 1px 7px 1px;
+}
+
+.results-section button:hover {
+  background-color: #068f7f;
+}
+
+.results-section p {
+  background-color: #07b39f;
+  color: #ffffff;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+  font-size: 80px;
+  padding: 1px 7px 1px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%
+}
+
 @media(max-width:950px) {
   .year-page input {
     font-size: 40px;
@@ -346,5 +442,87 @@ body {
     padding: 2px;
     margin: 2px;
     font-size: 16px;
+  }
+}
+
+@media(max-width:850px) {
+  .results-section p {
+    font-size: 50px;
+  }
+
+  .quiz-back p {
+    margin-top: 5vw;
+    font-size: 25px;
+  }
+
+  .quiz-back a {
+    padding: 4px 2px;
+    font-size: 25px;
+  }
+}
+
+@media(max-width:680px) {
+  .results-section p {
+    font-size: 50px;
+  }
+
+  .quiz-back p {
+    font-size: 20px;
+  }
+
+  .quiz-back a {
+    padding: 4px 2px;
+    font-size: 20px;
+  }
+}
+
+@media(max-width:600px) {
+  .results-section p {
+    font-size: 30px;
+    width: 30%
+  }
+
+  .quiz-back p {
+    margin-top: 4vw;
+    height: 40%;
+    font-size: 16px;
+  }
+
+  .quiz-back a {
+    font-size: 16px;
+  }
+}
+
+@media(max-width:490px) {
+  .quiz-back p {
+    margin-top: 2vw;
+    height: 30%;
+  }
+
+  .quiz-back a {
+    padding: 2px;
+    margin: 0.5vw 3vw;
+  }
+}
+
+@media(max-width:320px) {
+  .quiz-back p {
+    height: 20%;
+  }
+
+  .results-section p {
+    font-size: 30px;
+    width: 50%;
+  }
+}
+
+@media(max-width:300px) {
+  .quiz-back p {
+    height: 20%;
+    font-size: 12px;
+  }
+
+  .quiz-back a {
+    font-size: 12px;
   }
 }

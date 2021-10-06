@@ -14,6 +14,8 @@ import './services';
 import './ltwo';
 import './ltwop';
 import './teacher';
+import './quizzes';
+import './quiz_ltwo';
 
 // Create and bootstrap application
 const requires = [
@@ -24,7 +26,9 @@ const requires = [
   'app.services',
   'app.ltwo',
   'app.ltwop',
-  'app.teacher'
+  'app.teacher',
+  'app.quizzes',
+  'app.quiz_ltwo'
 ];
 
 // alert=function (){}

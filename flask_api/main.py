@@ -24,7 +24,7 @@ def intro():
 
 @app.route('/login', methods=['POST'])
 @cross_origin()
-def search_git():
+def login_get_facts():
     req_data = request.get_json()
     if 'year' in req_data:
         year = req_data['year']
@@ -88,7 +88,7 @@ def search_git():
                 return "FAILED: Failed to open L2P fact file"
             outputDict = {"login": "Success", "L2": {"facts": L2Array}, "L2P": {"facts": L2PArray}}
             output = json.dumps(outputDict)
-        elif year == "Teachers":
+        elif year in ["Teachers", "ExStudents"]:
             opened = False
             with open('L2.txt') as csv_file:
                 opened = True
@@ -124,6 +124,60 @@ def search_git():
             if not opened:
                 return "FAILED: Failed to open L2P fact file"
             outputDict = {"login": "Success", "L2": {"facts": L2Array}, "L2P": {"facts": L2PArray}}
+            output = json.dumps(outputDict)
+    return output
+
+@app.route('/quiz', methods=['POST'])
+@cross_origin()
+def get_quiz():
+    req_data = request.get_json()
+    if 'year' in req_data:
+        year = req_data['year']
+    else:
+        return "FAILED: Did not supply a year"
+    if 'password' in req_data:
+        password = req_data['password']
+    else:
+        return "FAILED: Did not supply a password"
+    if password != os.environ["quiz_"+year]:
+        outputDict = {"login": "Failed"}
+        output = json.dumps(outputDict)
+    else:
+        if year == "L2":
+            opened = False
+            with open('quiz_L2.txt') as csv_file:
+                opened = True
+                csv_reader = csv.reader(csv_file, quotechar='"', delimiter=',', quoting=csv.QUOTE_ALL, skipinitialspace=True)
+                resultArray = []
+                for row in csv_reader:
+                    try:
+                        ansint = int(row[6])
+                    except:
+                        ansint = False
+                    if ansint and (ansint in [1,2,3,4]):
+                        stepDict = {"img_url": row[0], "question": row[1], "answers": [{"int": 1, "text": row[2]}, {"int": 2, "text": row[3]}, {"int": 3, "text": row[4]}, {"int": 4, "text": row[5]}], "correct_int": ansint}
+                        resultArray.append(stepDict)
+            if not opened:
+                return "FAILED: Failed to open L2 quiz file"
+            outputDict = {"login": "Success", "questions": resultArray}
+            output = json.dumps(outputDict)
+        elif year == "L2P":
+            opened = False
+            with open('quiz_L2P.txt') as csv_file:
+                opened = True
+                csv_reader = csv.reader(csv_file, quotechar='"', delimiter=',', quoting=csv.QUOTE_ALL, skipinitialspace=True)
+                resultArray = []
+                for row in csv_reader:
+                    try:
+                        ansint = int(row[6])
+                    except:
+                        ansint = False
+                    if ansint and (ansint in [1,2,3,4]):
+                        stepDict = {"img_url": row[0], "question": row[1], "answers": [{"int": 1, "text": row[2]}, {"int": 2, "text": row[3]}, {"int": 3, "text": row[4]}, {"int": 4, "text": row[5]}], "correct_int": ansint}
+                        resultArray.append(stepDict)
+            if not opened:
+                return "FAILED: Failed to open L2P quiz file"
+            outputDict = {"login": "Success", "questions": resultArray}
             output = json.dumps(outputDict)
     return output
 
